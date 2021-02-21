@@ -1,0 +1,12 @@
+{
+    "name": "vue-hamburger",
+    "version": "1.0.0",
+    "description": "Hamburger icon",
+    "main": "hamburger.vue",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/joebailey26/vue-hamburger"
+    },
+    "author": "Joe Bailey",
+    "homepage": "https://github.com/joebailey26/vue-hamburger"
+  }

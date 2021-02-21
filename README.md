@@ -13,7 +13,7 @@ Based on Hamburgers by jonsuh [https://github.com/jonsuh/hamburgers](https://git
   ```
 
 ```javascript
-import Hamburger from 'vue-hamburger'
+import Hamburger from 'vue-hamburger/hamburger.vue'
 
 export default {
   components: {
@@ -21,3 +21,43 @@ export default {
   }
 }
 ```
+
+### Types
+
+Dem can be found here [https://jonsuh.com/hamburgers/](https://jonsuh.com/hamburgers/)
+
+```
+3dx
+3dx-r
+3dy
+3dy-r
+3dxy
+3dxy-r
+arrow
+arrow-r
+arrowalt
+arrowalt-r
+arrowturn
+arrowturn-r
+boring
+collapse
+collapse-r
+elastic
+elastic-r
+emphatic
+emphatic-r
+minus
+slider
+slider-r
+spin
+spin-r
+spring
+spring-r
+stand
+stand-r
+squeeze
+vortex
+vortex-r
+```
+
+Note: -r classes are reverse variants (e.g. spin spins clockwise whereas spin-r spins counterclockwis

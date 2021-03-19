@@ -843,6 +843,18 @@ export default {
         }, 1)
       }
     }
+  },
+  watch: {
+    $route: {
+      handler () {
+        this.expanded = !this.expanded
+        document.documentElement.classList.remove('nav_open')
+        setTimeout(function () {
+          document.documentElement.classList.add('nav_close')
+        }, 1000)
+      },
+      deep: true
+    }
   }
 }
 </script>

@@ -5,11 +5,11 @@ Based on Hamburgers by jonsuh [https://github.com/jonsuh/hamburgers](https://git
 ## Usage
 
 ```bash
-    yarn add https://github.com/joebailey26/vue-hamburger
+yarn add https://github.com/joebailey26/vue-hamburger
 ```
 
 ```html
-    <Hamburger type="arrow" color="#ffffff" />
+<Hamburger type="arrow" color="#ffffff" />
   ```
 
 ```javascript

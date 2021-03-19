@@ -24,7 +24,7 @@ export default {
 
 ### Types
 
-Dem can be found here [https://jonsuh.com/hamburgers/](https://jonsuh.com/hamburgers/)
+Demo can be found here [https://jonsuh.com/hamburgers/](https://jonsuh.com/hamburgers/)
 
 ```
 3dx

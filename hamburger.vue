@@ -813,15 +813,17 @@ export default {
       default: ''
     }
   },
-  data () {
-    return {
-      expanded: false
-    }
-  },
   computed: {
     classObject () {
       return {
         'is-active': this.expanded
+      }
+    },
+    expanded () {
+      if (document.documentElement.classList.contains('nav_close')) {
+        return false
+      } else {
+        return true
       }
     }
   },

@@ -1,6 +1,6 @@
 {
     "name": "vue-hamburger",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Hamburger icon",
     "main": "hamburger.vue",
     "repository": {

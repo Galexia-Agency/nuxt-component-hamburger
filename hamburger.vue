@@ -838,7 +838,9 @@ export default {
     }
   },
   mounted () {
+    this.force++
     document.documentElement.classList.add('nav_close')
+    this.force++
   },
   methods: {
     nav () {

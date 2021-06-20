@@ -813,6 +813,11 @@ export default {
       default: ''
     }
   },
+  data () {
+    return {
+      force: null
+    }
+  },
   computed: {
     classObject () {
       return {
@@ -820,10 +825,15 @@ export default {
       }
     },
     expanded () {
-      if (document.documentElement.classList.contains('nav_close')) {
-        return false
+      this.force
+      if (process.client) {
+        if (document.documentElement.classList.contains('nav_close')) {
+          return false
+        } else {
+          return true
+        }
       } else {
-        return true
+        return false
       }
     }
   },
@@ -832,28 +842,35 @@ export default {
   },
   methods: {
     nav () {
-      this.expanded = !this.expanded
+      this.force++
+      const self = this
       if (document.documentElement.classList.contains('nav_open')) {
         document.documentElement.classList.remove('nav_open')
         setTimeout(function () {
           document.documentElement.classList.add('nav_close')
+          self.force++
         }, 1000)
       } else {
         document.documentElement.classList.remove('nav_close')
         setTimeout(function () {
           document.documentElement.classList.add('nav_open')
+          self.force++
         }, 1)
       }
+      this.force++
     }
   },
   watch: {
     $route: {
       handler () {
-        this.expanded = !this.expanded
+        this.force++
+        const self = this
         document.documentElement.classList.remove('nav_open')
         setTimeout(function () {
           document.documentElement.classList.add('nav_close')
+          self.force++
         }, 1000)
+        this.force++
       },
       deep: true
     }

@@ -815,64 +815,46 @@ export default {
   },
   data () {
     return {
-      force: null
+      expanded: false
     }
-  },
+  }
   computed: {
     classObject () {
       return {
         'is-active': this.expanded
       }
-    },
-    expanded () {
-      this.force
-      if (process.client) {
-        if (!document.documentElement.classList.contains('nav_close')) {
-          return true
-        } else {
-          return false
-        }
-      } else {
-        return false
-      }
     }
   },
   mounted () {
-    this.force++
     document.documentElement.classList.add('nav_close')
-    this.force++
   },
   methods: {
     nav () {
-      this.force++
       const self = this
       if (document.documentElement.classList.contains('nav_open')) {
         document.documentElement.classList.remove('nav_open')
         setTimeout(function () {
           document.documentElement.classList.add('nav_close')
-          self.force++
-        }, 1000)
+          self.expanded = false
+        }, 500)
       } else {
         document.documentElement.classList.remove('nav_close')
         setTimeout(function () {
           document.documentElement.classList.add('nav_open')
-          self.force++
+          self.expanded = true
         }, 1)
       }
-      this.force++
     }
   },
   watch: {
     $route: {
       handler () {
-        this.force++
         const self = this
         document.documentElement.classList.remove('nav_open')
         setTimeout(function () {
           document.documentElement.classList.add('nav_close')
-          self.force++
-        }, 1000)
-        this.force++
+          self.expanded = false
+        }, 500)
       },
       deep: true
     }

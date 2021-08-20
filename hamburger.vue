@@ -827,10 +827,10 @@ export default {
     expanded () {
       this.force
       if (process.client) {
-        if (document.documentElement.classList.contains('nav_close')) {
-          return false
-        } else {
+        if (!document.documentElement.classList.contains('nav_close')) {
           return true
+        } else {
+          return false
         }
       } else {
         return false

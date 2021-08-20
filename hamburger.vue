@@ -817,7 +817,7 @@ export default {
     return {
       expanded: false
     }
-  }
+  },
   computed: {
     classObject () {
       return {

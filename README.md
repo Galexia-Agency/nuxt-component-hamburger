@@ -9,7 +9,7 @@ yarn add https://github.com/joebailey26/vue-hamburger
 ```
 
 ```html
-<Hamburger type="arrow" color="#ffffff" />
+<Hamburger type="arrow" color="#ffffff" :expanded="expanded" />
   ```
 
 ```javascript
@@ -18,6 +18,16 @@ import Hamburger from 'vue-hamburger/hamburger.vue'
 export default {
   components: {
     Hamburger
+  },
+  data () {
+    return {
+      expanded: null
+    }
+  },
+  methods: {
+    closeMenu() {
+      this.expanded = false
+    }
   }
 }
 ```

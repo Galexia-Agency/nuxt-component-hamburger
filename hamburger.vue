@@ -791,7 +791,7 @@
     type="button"
     aria-label="Menu"
     aria-controls="navigation"
-    :aria-expanded="expanded"
+    :aria-expanded="expand"
     @click="nav"
   >
     <span class="hamburger-box">
@@ -811,17 +811,21 @@ export default {
     color: {
       type: String,
       default: ''
+    },
+    expanded: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
-      expanded: false
+      expand: false
     }
   },
   computed: {
     classObject () {
       return {
-        'is-active': this.expanded
+        'is-active': this.expand
       }
     }
   },
@@ -835,25 +839,30 @@ export default {
         document.documentElement.classList.remove('nav_open')
         setTimeout(function () {
           document.documentElement.classList.add('nav_close')
-          self.expanded = false
+          self.expand = false
         }, 500)
       } else {
         document.documentElement.classList.remove('nav_close')
         setTimeout(function () {
           document.documentElement.classList.add('nav_open')
-          self.expanded = true
+          self.expand = true
         }, 1)
       }
     }
   },
   watch: {
+    expanded: {
+      handler () {
+        this.expand = this.expanded
+      }
+    },
     $route: {
       handler () {
         const self = this
         document.documentElement.classList.remove('nav_open')
         setTimeout(function () {
           document.documentElement.classList.add('nav_close')
-          self.expanded = false
+          self.expand = false
         }, 500)
       },
       deep: true

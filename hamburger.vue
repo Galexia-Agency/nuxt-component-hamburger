@@ -31,7 +31,7 @@
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner:before,
 .hamburger.is-active .hamburger-inner:after {
-  background-color: inherit
+  background: inherit
 }
 .hamburger-box {
   width: 40px;
@@ -47,7 +47,7 @@
 .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
   width: 40px;
   height: 3px;
-  background-color: inherit;
+  background: inherit;
   border-radius: 3px;
   position: absolute;
   transition-property: transform;
@@ -795,7 +795,7 @@
     @click="nav"
   >
     <span class="hamburger-box">
-      <span class="hamburger-inner" :style="'background-color:' + color" />
+      <span class="hamburger-inner" :style="'background:' + color" />
     </span>
   </button>
 </template>
